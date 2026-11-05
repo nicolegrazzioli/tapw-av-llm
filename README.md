@@ -9,10 +9,31 @@
 
 ## Sumário
 
-- [Contexto de Software](#contexto-de-software)
-- [Prompts](#prompts)
-- [Gemini 3.8 Flash Medium - Chat Web](#gemini-38-flash-medium---chat-web)
-- [Qwen2.5-Coder:7B - Ollama + Colab](#qwen25-coder7b---ollama--colab)
+1. [Contexto de Software](#contexto-de-software)
+2. [Prompts](#prompts)
+
+   a. [Prompt 1 (Planejamento e Arquitetura)](#prompt-1-planejamento-e-arquitetura)  
+   b. [Prompt 2 (Primeira Metade do Código)](#prompt-2-primeira-metade-do-código)  
+   c. [Prompt 3 (Segunda Metade do Código e Integração)](#prompt-3-segunda-metade-do-código-e-integração)
+3. [Gemini 3.8 Flash Medium - Chat Web](#gemini-38-flash-medium---chat-web)
+   
+   a. [Respostas Prompt 1](#respostas-prompt-1)  
+   b. [Respostas Prompt 2](#respostas-prompt-2)  
+   c. [Respostas Prompt 3](#respostas-prompt-3)
+4. [Qwen2.5-Coder:7B - Ollama + Colab](#qwen25-coder7b---ollama--colab)
+   
+   a. [Versão 1 (v1 - Prompt 3)](#versão-1-v1---prompt-3)  
+   b. [Versão 2 (v2 - Prompt 4: Correção Adicional)](#versão-2-v2---prompt-4-correção-adicional)  
+   c. [Preparação de Ambiente](#preparação-de-ambiente)  
+   d. [Respostas Prompt 1](#respostas-prompt-1-1)  
+   e. [Respostas Prompt 2](#respostas-prompt-2-1)  
+   f. [Respostas Prompt 3](#respostas-prompt-3-1)  
+   g. [Prompt 4](#prompt-4)
+5. [Avaliação dos Resultados](#avaliação-dos-resultados)
+   
+   a. [Análise das Saídas e Execução](#análise-das-saídas-e-execução)  
+   b. [Comparativo de Código: Gemini vs Qwen (v1)](#comparativo-de-código-gemini-vs-qwen-v1)  
+   c. [Síntese Comparativa](#síntese-comparativa)
 
 ---
 
@@ -1455,3 +1476,28 @@ if __name__ == "__main__":
 
 Este código completo realiza o varredura do diretório especificado ou padrão, analisa as pastas de lixo, calcula seu tamanho e exibe um relatório detalhado. A implementação garante que o programa seja executado no modo 100% leitura, conforme solicitado.
 ```
+
+---
+
+## Avaliação dos Resultados
+
+### Análise das Saídas e Execução
+
+* **Gemini 3.8 Flash:** Concluiu o fluxo com êxito na primeira tentativa (Prompt 3), gerando o relatório final formatado com cores ANSI, feedback durante a varredura e resumo quantitativo de armazenamento.
+* **Qwen2.5-Coder:7B (v1):** Apresentou interrupção na execução devido a um erro de importação (`NameError: name 'get_directory_size' is not defined`) no script principal, não gerando a saída diagnóstica até o Prompt 3 (o que demandou o Prompt 4 para obter a versão funcional na v2).
+
+---
+
+### Comparativo de Código: Gemini vs Qwen (v1)
+
+* **Arquitetura e Organização:** O Gemini estruturou a aplicação em camadas modulares (`core`, `engine`, `git`, `ui`), adotando dataclasses imutáveis e enums tipados. O Qwen (v1) optou por um modelo procedural direto, separando funções utilitárias em arquivos independentes de forma mais simples e compacta.
+* **Inspeção de Repositório (Git):** O Gemini implementou a busca subindo a árvore de diretórios até encontrar a raiz `.git` do projeto pai. O Qwen (v1) restringiu a checagem ao interior da própria pasta identificada, gerando falsos negativos para pastas internas de projetos versionados.
+* **Varredura e Desempenho:** O Gemini utilizou `os.scandir` iterativo com pilha e catálogo amplo de assinaturas de desenvolvimento. O Qwen (v1) utilizou `os.walk` tradicional com verificação por substring em uma lista enxuta de padrões, resultando em um código menor, porém mais suscetível a falsos positivos.
+* **Resiliência a Falhas:** Ambos previram tratamento para diretórios com permissão negada; o Gemini acrescentou tratamento específico por arquivo e desativação de links simbólicos para evitar ciclos.
+
+---
+
+### Síntese Comparativa
+
+* **Gemini 3.8 Flash:** Demonstrou maior precisão na execução direta, arquitetura robusta e aderência a cenários reais de projeto (como a busca ascendente do Git), tendo como contraponto uma base de código mais extensa e segmentada.
+* **Qwen2.5-Coder:7B:** Apresentou uma solução mais enxuta e de leitura rápida. Contudo, a ausência de um import impediu a execução inicial na v1 e a lógica de checagem do Git demandou refinamento posterior, evidenciando menor atenção à integração entre módulos na primeira resposta.
