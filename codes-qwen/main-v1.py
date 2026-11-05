@@ -6,9 +6,9 @@ from backup_check import check_backup
 from report import generate_report
 
 def get_input_path():
-    path = input("Digite o caminho inicial (Enter para usar 'C:\\Users\\nicol\\0-pasta-teste'): ")
+    path = input("Digite o caminho inicial (Enter para usar 'C:\\Users\\nicol\\nicolegrazzioli\\tapw-av-llm'): ")
     if not path:
-        path = 'C:\\Users\\nicol\\0-pasta-teste'
+        path = 'C:\\Users\\nicol\\nicolegrazzioli\\tapw-av-llm'
     return path
 
 def main():

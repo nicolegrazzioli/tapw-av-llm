@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-DEFAULT_SCAN_PATH = r"C:\Users\nicol\0-pasta-teste"
+DEFAULT_SCAN_PATH = r"C:\Users\nicol\nicolegrazzioli\tapw-av-llm"
 
 
 def get_target_directory() -> Path:

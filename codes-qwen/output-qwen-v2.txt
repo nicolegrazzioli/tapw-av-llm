@@ -1,0 +1,61 @@
+Digite o caminho inicial (ou ENTER para padrão): 
+RELATÓRIO DE ANÁLISE
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\__pycache__
+Tamanho: 8.00 MB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\codes-gemini\core\__pycache__
+Tamanho: 5.84 KB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\codes-gemini\engine\__pycache__
+Tamanho: 3.31 KB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\codes-gemini\git\__pycache__
+Tamanho: 4.27 KB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\codes-gemini\ui\__pycache__
+Tamanho: 10.41 KB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\codes-qwen\__pycache__
+Tamanho: 3.60 KB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\exemplo-a-node\node_modules
+Tamanho: 58.00 MB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\exemplo-b-maven-target\target
+Tamanho: 48.00 MB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\exemplo-c-python-sem-git\.venv
+Tamanho: 34.00 MB
+Tipo de Lixo: Essencial ao Sistema
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\exemplo-c-python-sem-git\__pycache__     
+Tamanho: 61.00 MB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\exemplo-c-python-sem-git\core\__pycache__
+Tamanho: 10.00 MB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
+
+Caminho: C:\Users\nicol\nicolegrazzioli\tapw-av-llm\exemplo-c-python-sem-git\services\__pycache__
+Tamanho: 26.00 MB
+Tipo de Lixo: Seguro para Remoção
+URL do GitHub:
